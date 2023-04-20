@@ -4,19 +4,22 @@ import { MaterialIcons } from "../../../node_modules/@expo/vector-icons";
 
 export default function TodoItems({ item, deleteItem }) {
   return (
-    <TouchableOpacity
-      style={styles.itemContainer}
-      onPress={() => deleteItem(item.key)}
-    >
+    <View style={styles.itemContainer}>
       <View style={styles.item}>
-        <MaterialIcons name="delete" size={18} color="#333" />
+        <TouchableOpacity onPress={() => deleteItem(item.key)}>
+          <MaterialIcons name="delete" size={18} color="#333" />
+        </TouchableOpacity>
         <Text style={styles.listItem}>{item.text}</Text>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  itemContainer: {
+    flex: 1,
+    paddingHorizontal: 15,
+  },
   item: {
     marginBottom: 20,
     paddingLeft: 10,
