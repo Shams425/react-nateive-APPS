@@ -1,4 +1,4 @@
-import { View, Text, TextInput, StyleSheet, Button } from "react-native";
+import { View, TextInput, StyleSheet, Button } from "react-native";
 import React, { useRef, useState } from "react";
 
 export default function AddTodoForm(props) {
